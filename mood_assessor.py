@@ -3,11 +3,20 @@ Stores the functions needed for mood assessing.
 '''
 from pathlib import Path
 import datetime
+import os
 
 def create_diary_file():
     '''
     Ensures the file for mood recording exists, if not, it will make it.
     '''
+    # I have no idea how to add a directory on Github, 
+    # but I was looking around and found out that I could create one using the os module
+    # so even though we didn't learn it(I think) in class, I'll include it here
+    # checks if the directory exists
+    if not os.path.exists("data"):
+        # if not it makes it, voila
+        os.makedirs("data")
+    # append and write mode both let you create the file, but write mode would overwrite it
     filepath = Path("data/mood_diary.txt")
     diary_file = open(filepath, encoding="utf-8", mode="a")
     diary_file.close()
