@@ -90,6 +90,7 @@ def check_if_mood_is_recorded():
         ## Today's date has been found.
         if date_today in data:
             return True
+    diary_file.close()
 
 def get_user_input():
     '''
